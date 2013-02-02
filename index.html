@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var _gaq=_gaq || [];
+_gaq.push(['_setAccount','UA-34037343-1']);
+_gaq.push(['_trackPageview']);
+(function(){
+var ga=document.createElement('script');ga.type='text/javaScript';ga.async=true;
+ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';
+var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);
+})();
+</script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="control.js"></script>
+<style type="text/css">
+.back{
+overflow: none;
+
+//background: url(http://i312.photobucket.com/albums/ll331/superluffy/background_tile.gif) repeat;
+
+/* IE10 Consumer Preview */ 
+background-image: -ms-radial-gradient(center, circle farthest-corner, #D537FC 0%, #290C30 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-radial-gradient(center, circle farthest-corner, #D537FC 0%, #290C30 100%);
+
+/* Opera */ 
+background-image: -o-radial-gradient(center, circle farthest-corner, #D537FC 0%, #290C30 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(radial, center center, 0, center center, 433, color-stop(0, #D537FC), color-stop(1, #290C30));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-radial-gradient(center, circle farthest-corner, #D537FC 0%, #290C30 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: radial-gradient(circle farthest-corner at center, #D537FC 0%, #290C30 100%);
+
+}
+</style>
+</head>
+<body class="back">
+<div id="full" style="position:absolute;left:300px;top:0px;">
+
+
+<div id="Logo"></div>
+<img src="images/plogo.png" width="250px" style="position:relative;left:75px"/>
+<div id="bar" style="position:absolute;">
+<!--
+z-index:
+5 : marker and end shade
+4 : numbers on strip // changed: the stip itself is changed(class) in case of a number
+3 : strip
+2 : the strip holes
+-->
+<div class="bar_end_l"></div>
+<div class="bar_end_r"></div>
+<div class="mark"></div>
+
+<div id="linestrip" style="position:absolute;left:6px;height:52px;width:371px;overflow:hidden;z-index:3;//border:1px solid black"><!--9x40=360(371) total. -->
+	<div class="strip_shade_l"></div>
+	<div class="strip_shade_r"></div>
+	<div id="mover" style="position:absolute;left:-35px;display:inline;width:800px;height:52px;//border:1px solid red">
+	<!-- size 4on either side, 4x40=160(-5 for view).to move on left:left-=40px right:left+=40px-->
+	<!--for numbers just change the class to number1 or number0-->
+
+	<!-- the number of strips always remain 9 -->
+	<div id="s-5" class="strip"></div>
+	<div id="s-4" class="strip"></div>
+	<div id="s-3" class="strip"></div>
+	<div id="s-2" class="strip"></div>
+	<div id="s-1" class="number1"></div>
+	<div id="s0" class="number0"></div><!--mid-->
+	<div id="s1" class="number0"></div>
+	<div id="s2" class="strip"></div>
+	<div id="s3" class="strip"></div>
+	<div id="s4" class="strip"></div>
+	<div id="s5" class="strip"></div>
+	
+	</div>
+</div>
+
+</div>
+
+<!--may be absolute-->
+<div id="control" style='position:relative;top:90px;left:15px;border:0px solid black'>
+	<div style="position:absolute;top:0px;left:40px;"><div id="but1" class="left_button"></div></div>
+	<div style="position:absolute;top:0px;left:100px;"><div id="but2" class="one_button"></div></div>
+	<div style="position:absolute;top:0px;left:160px;"><div id="but3" class="null_button"></div></div>
+	<div style="position:absolute;top:0px;left:220px;"><div id="but4" class="zero_button"></div></div>
+	<div style="position:absolute;top:0px;left:280px;"><div id="but5" class="right_button"></div></div>
+</div>
+
+</div>
+
+<div id='help' style='font-family:"Lucida Console", Times, serif;background:;border:2px solid black;border-radius:10px;position:fixed;top:100px;right:0px;z-index:-5;opacity:0.9;'><br>
+	<span style='font-family:"Verdana", Times, serif;font-weight:bold'> &nbsp Use Mouse click or Keyboard</span><br><br> &nbsp 
+	<img src="images/left.png" height="25px"> : Move Left<br><br> &nbsp 
+	<img src="images/right.png" height="25px"> :  Move Right<br><br> &nbsp 
+	<img src="images/up.png" height="25px"> : Write One<br><br> &nbsp 
+	<img src="images/down.png" height="25px"> : Write Zero<br><br> &nbsp 
+	<img src="images/space.png" height="25px"> : Clear Memory <br> &nbsp 
+</div>
+
+<audio hidden="true" id="typeS"><source src="audio/typewriter-key-1.mp3"></source><source src="audio/typewriter-key-1.ogg"></source></audio>
+<audio hidden="true" id="moveS"><source src="audio/typewriter-return-1.mp3"></source><source src="audio/typewriter-return-1.ogg"></source></audio>
+<audio hidden="true" id="clearS"><source src="audio/typewriter-paper-1.mp3"></source><source src="audio/typewriter-paper-1.ogg"></source><embed src="audio/typewriter-paper-1.mp3" autoplay="true" hidden="true"/></audio>
+
+</body>
+</html>
